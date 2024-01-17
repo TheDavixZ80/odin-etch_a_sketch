@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <title>Etch-A-Sketch</title>
+</head>
+
+<body>
+  <div class="mainContainer">
+    <aside class="sidenav">
+      <div class="sidenavContainer">
+          <ul>      
+              <li> <h3 class="text_Label">Grid size: </h3> </li>
+              <li> <p class="labels" id="label_GridSize">16 x 16</p> </li>
+              <li><input type="range" class="input_Range" id="input_GridSize" min="1" max="64" value="16" oninput="updateGridSizeValue()"></li>
+              <li><button class="btn" id="btnGenerate" onclick="generateGrid()">Generate Grid</button></li>
+              <li><button class="btn" id="btnReset" onclick="resetGrid()">Reset Grid</button></li>
+              <li><button class="btn" id="btnDelete" onclick="deleteGrid()">Delete</button></li>
+              
+              <li> <h3 class="text_Label">Color:</h3>  <br>
+              <input type="color" id="selectedColor" name="selectedColor" value="#ff0000"> </li>            
+          
+              <li> <input type="checkbox" class="modes" id="enableRainbow" name="enableRainbow" onclick="validateBetweenModes(this)">
+                  <label class="labels" id="rainbowModeLabel" for="enableRainbow"> Rainbow mode </label> <br> </li>
+
+              <li> <input type="checkbox" class="modes" id="enableDarken" name="enableDarken" onclick="validateBetweenModes(this)">
+                  <label class="labels" id="darkenModeLabel"  for="enableDarken"> Darken mode </label> <br> </li>
+
+              <li> <input type="checkbox" class="modes" id="enableLighten" name="enableLighten" onclick="validateBetweenModes(this)">
+                  <label class="labels" id="lightenModeLabel"  for="enableLighten"> Lighten mode </label> <br> </li>
+              
+              <li> <input type="checkbox" id="enableClickMode" name="enableClickMode">
+                  <label class="labels" id="clickModeLabel" for="enableClickMode"> Click mode </label> <br> </li>
+              
+              <li> <input type="checkbox" id="enableEraser" name="enableEraser">
+                  <label class="labels"  id="eraserLabel" for="enableEraser"> Eraser </label> <br> </li>
+          </ul>
+      </div>    
+    </aside>      
+  
+    <main class="content">
+      <h1 class="title">Etch-A-Sketch</h1>  
+      <div class="mainCanvas" id="mainCanvas">               
+      </div>
+    </main>
+
+  </div>
+    
+  <script type="text/javascript" src="js.js"></script>    
+
+</body>
+</html>

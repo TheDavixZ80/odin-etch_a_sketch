@@ -1,0 +1,249 @@
+body {
+    background-color: rgba(255, 0, 0, 0.267);
+}
+
+h1 {
+  font-family: Courgette;
+  font-size: 3.5rem;
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-family: Courgette;
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.mainContainer {
+  display: flex;
+}
+
+.sidenav {  
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+
+    height: 100%;
+    width: 20vw;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(138, 6, 6);
+    overflow-x: hidden;      
+  }
+
+  .sidenavContainer{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+ .sidenav li {
+    color: white;
+    font-size: 1.75rem;    
+    text-decoration: none;
+    list-style-type: none;
+    width: 100%;
+  } 
+
+  .sidenav li:nth-child(1), li:nth-child(2), li:nth-child(3)  {
+    display: contents;    
+    height: auto;
+  }
+  
+  .sidenav li:nth-child(7) {
+    display: contents;
+  }
+
+  #label_GridSize{
+    margin: 0.30rem;
+  }
+
+  .sidenav input {    
+    text-align: center;
+    border: 0;
+    margin: 0.20rem;
+  }
+
+  #input_GridSize {
+    width: 100%;
+    margin: 0.50rem;
+  }
+
+  .sidenav button {
+    background: rgb(5, 76, 209);
+    border: solid 2px white;
+    border-radius: 15px;
+    color: white;
+    width: 90%;
+    padding: 0.75rem;
+    margin: 0.20rem;
+    font-size: 1rem;
+  }
+
+  .sidenav button:hover {
+    background: rgb(58, 112, 212);
+    transform: scale(1.1);    
+  }
+
+  #selectedColor {
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: rgb(255, 0, 0);
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 0;
+    outline: none;
+    margin: -5px 0px 10px;    
+  }
+
+  #selectedColor:hover {
+    transform: scale(1.1);
+  }
+  /* Se usan pseudo clases que permiten darle la estetica circular*/
+  input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+  }
+
+  .modes:hover {
+    transform: scale(1.2);    
+    cursor: pointer;
+  }
+
+  .labels {
+    font-family: Courgette;
+  }
+
+  .labels:hover {
+    cursor: pointer;
+  }
+  
+  #rainbowModeLabel {
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  #darkenModeLabel {
+    background-image: linear-gradient(to left, black, gray, white);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  #lightenModeLabel {
+    background-image: linear-gradient(to right, black, gray, white);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  #lightenModeLabel:hover {
+    transform: scale(1.2);
+  }
+
+/*
+  CONTENT OF THE RIGHT
+*/
+
+.content {
+  margin-left: 200px;
+  padding-left: 20px;
+  width: 80vw;
+  height: auto;
+}
+
+
+  .mainCanvas{
+      display: flex;    
+      flex-direction: column;
+      aspect-ratio: 1/1;   
+
+      background-color: rgb(217, 252, 252);
+      font-family: 'Courier New', Courier, monospace;   
+    
+      margin: auto;
+      border: 25px solid rgb(255, 0, 0);
+      border-radius: 10px;
+      height: auto;
+      width: auto; 
+      max-width: 550px;    
+      box-sizing: border-box;    
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+  }
+
+  .squareCell {
+    flex: 1 1 auto;
+    border: 1px solid rgb(8, 0, 0);
+    box-sizing: border-box;
+  
+    aspect-ratio: 1/1; 
+    margin: 0;
+    padding: 0;
+    transition: 0.3s ease-in-out;
+  }
+
+
+  @media screen and (max-width: 600px) {
+
+    body {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .mainContainer {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .sidenav {
+      position: relative;
+      width: 100%;
+      height: auto;
+    }
+
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      margin: 0 20px 25px;
+      
+    }
+
+    .mainCanvas{
+      margin: 0;
+    }
+    
+  }
+
